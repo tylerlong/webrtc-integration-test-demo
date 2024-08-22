@@ -5,10 +5,11 @@
   "license": "UNLICENSED",
   "scripts": {
     "lint": "tsc --jsx react --skipLibCheck --noEmit --target ESNext --moduleResolution NodeNext --module NodeNext ./src/*.ts && eslint --fix '**/*.{ts,tsx,js,jsx}' && prettier --write . && sort-package-json",
-    "serve": "parcel src/index.html"
+    "serve": "rm -rf .parcel-cache && parcel src/index.html"
   },
   "dependencies": {
     "@rc-ex/core": "^1.4.0",
+    "localforage": "^1.10.0",
     "ringcentral-web-phone": "^2.0.0-alpha.5"
   },
   "devDependencies": {
