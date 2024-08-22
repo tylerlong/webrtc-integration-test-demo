@@ -1,4 +1,4 @@
-// import WebPhone from 'ringcentral-web-phone';
+import WebPhone from 'ringcentral-web-phone';
 import RingCentral from '@rc-ex/core';
 import localforage from 'localforage';
 import type SipInfoResponse from '@rc-ex/core/lib/definitions/SipInfoResponse';
@@ -29,5 +29,8 @@ const main = async () => {
     console.log('use existing sipInfo');
   }
   console.log(sipInfo);
+  const webPhone = new WebPhone({ sipInfo });
+  await webPhone.enableDebugMode();
+  await webPhone.register();
 };
 main();
