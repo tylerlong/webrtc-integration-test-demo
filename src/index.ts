@@ -24,6 +24,7 @@ const main = async () => {
         sipInfo: [{ transport: 'WSS' }],
       });
     sipInfo = r.sipInfo![0];
+    await rc.revoke();
     await localforage.setItem(cookieKey, sipInfo);
   } else {
     console.log('use existing sipInfo');
